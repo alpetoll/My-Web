@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Al-Fakhri Home</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="shortcut icon" type="x-icon" href="/assets/images/al.png">
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            color: white;
+            border-radius: 0px;
+        }
+
+        .marquee-text {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 10s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        body {
+            background-color: #121212;
+            color: #ddd;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+
+        .profile-card {
+            background-color: #121212;
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 12px;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            font-size: 2rem;
+        }
+
+        h3 {
+            font-weight: 400;
+            font-style: italic;
+            color: #ccc;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #ddd;
+        }
+
+        .video-banner {
+            position: relative;
+            width: 100%;
+            height: 60vh;
+            overflow: hidden;
+        }
+
+
+        .video-banner video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+            filter: brightness(0.5);
+        }
+
+        .video-banner .overlay-text {
+            position: absolute;
+            z-index: 2;
+            top: 0em;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+        }
+
+        .video-banner .overlay-text1 {
+            position: absolute;
+            z-index: 2;
+            top: 1em;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            font-weight: bold;
+            color: #ebee48;
+            text-shadow: 0 0 10px rgba(234, 248, 236, 0.7);
+        }
+
+        footer {
+            text-align: center;
+            font-weight: 300;
+            margin-top: 0px;
+            padding: 12px 10px;
+            font-size: 0.8rem;
+            user-select: none;
+        }
+
+        .logo-track {
+            white-space: nowrap;
+            overflow: hidden;
+            position: relative;
+            background: #121212;
+            padding: 20px 0;
+            margin-top: 10px;
+        }
+
+        .logo-slide {
+            display: inline-block;
+            animation: slide 20s linear infinite;
+        }
+
+        .logo-slide i {
+            font-size: 3rem;
+            margin: 0 25px;
+            color: #ffffff;
+        }
+
+        @keyframes slide {
+            from {
+                transform: translateX(100%);
+            }
+
+            to {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- INI NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand"><img src="assets/images/al.png" alt="" width="auto" height="50"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Portofolio.html">Achievements & Portfolio</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            More
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="Contact.html">Contact</a></li>
+                            <li><a class="dropdown-item" href="Career.html">Educational Background</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- INI NAVBAR -->
+
+    <!-- INI VIDIO HOME -->
+    <div class="video-banner">
+        <video autoplay muted loop>
+            <source src="/assets/Video/home.mp4" type="video/mp4">
+        </video>
+        <div class="overlay-text">MY</div>
+        <div class="overlay-text1">WEB</div>
+    </div>
+    <!-- INI VIDIO HOME END -->
+
+    <!-- INI PERKENALAN -->
+    <div class="card text-bg-dark">
+        <div class="card-body text-center text-bg-dark">
+            <div class="container my-5 mb-3">
+                <div class="marquee-container">
+                    <div class="marquee-text fs-5">
+                        <h3>Hii You, Welcome To My Website</h3>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <p class="card-text">" This is my website – my very first and the best one I’ve ever made!
+                I spent a long and exhausting time building it — it took me over a week to finish
+                But I’ll keep improving and refining it until it looks truly awesome and cool
+                Welcome to my very first web creation! "</p>
+            <div class="container text-center">
+                <div class="col">
+                    <button class="btn btn-light mt-1 mb-3" data-bs-toggle="modal"
+                        data-bs-target="#infoModal">Welcome</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="infoModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-white">
+                <div class="modal-header">
+                    <h5 class="modal-title">Welcome to my website</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    Dive into an experience full of creativity, adventure, and possibilities. Whether
+                    you're here to play, explore, or just be inspired, you're in the right place. Let
+                    the story begin!.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- INI PERKENALAN END -->
+
+    <!-- INI FOTO PROFIL -->
+    <div class="container my-5">
+        <div class="card border-0 p-4 rounded-4" style="background-color: #121212;">
+            <div class="row align-items-center g-4">
+                <!-- FOTO DI KIRI -->
+                <div class="col-5 col-md-4 text-center">
+                    <img src="/assets/images/pp.png" alt="Foto Fatih" class="img-fluid"
+                        style="width: 100%; max-width: 220px; aspect-ratio: 1/1; object-fit: cover; border-radius: 100px;">
+                </div>
+
+                <!-- NAMA DI KANAN -->
+                <div class="col-7 col-md-8 text-center text-md-start">
+                    <h4 style="color: #da9156;">Fatih Al-Fakhri M.</h4>
+                </div>
+            </div>
+
+            <!-- DESKRIPSI DI BAWAH -->
+            <div class="row mt-3">
+                <div class="col text-center text-md-start">
+                    <p style="color: #ccc; font-size: 0.95rem;">
+                        Hello! You can call me <strong>Al</strong> or <strong>Petol</strong>. Born in Purbalingga on
+                        January 21, 2008.
+                        I love technology, sports, and creativity. This website is my personal project — enjoy the
+                        journey!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- INI FOTO PROFIL END -->
+
+    <!-- GALLERY SECTION -->
+    <section class="container text-white mt-2">
+        <div class="text-center mb-4">
+            <h2 class="fw-bold">Memories & Motivation</h2>
+            <p class="text-secondary">Every photo holds its own story and inspiration</p>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+                <div class="card text-bg-dark h-100">
+                    <img src="/assets/images/kecil.png" class="card-img-top" alt="Little Adventure">
+                    <div class="card-body">
+                        <h5 class="card-title">Childhood: Little Adventure</h5>
+                        <p class="card-text">Small adventures, big memories. Irreplaceable childhood moments</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-bg-dark h-100">
+                    <img src="/assets/images/keluarga info.jpg" class="card-img-top" alt="Family">
+                    <div class="card-body">
+                        <h5 class="card-title">My Family: A Home Full of Love</h5>
+                        <p class="card-text">The place I grow and return to — full of love and laughter</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-bg-dark h-100">
+                    <img src="/assets/images/panahan.png" class="card-img-top" alt="Archery">
+                    <div class="card-body">
+                        <h5 class="card-title">Motivational: One Shot, One Focus</h5>
+                        <p class="card-text">Archery teaches me focus, patience, and purpose</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-bg-dark h-100">
+                    <img src="/assets/images/tkd.jpg" class="card-img-top" alt="Taekwondo">
+                    <div class="card-body">
+                        <h5 class="card-title">Born To Fight</h5>
+                        <p class="card-text">Every drop of sweat is a step toward victory</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- GALLERY SECTION END -->
+
+    <!-- LOGO -->
+    <div class="logo-track">
+        <div class="logo-slide">
+            <i class="fa-brands fa-github"></i>
+            <i class="fa-brands fa-gitlab"></i>
+            <i class="fa-brands fa-git-alt"></i>
+            <i class="fa-brands fa-reddit"></i>
+            <i class="fa-brands fa-bootstrap"></i>
+            <i class="fa-brands fa-html5"></i>
+            <i class="fa-brands fa-css3-alt"></i>
+            <i class="fa-brands fa-js"></i>
+            <i class="fab fa-google"></i>
+            <i class="fa-brands fa-edge"></i>
+            <i class="fab fa-microsoft"></i>
+            <i class="fa-brands fa-firefox-browser"></i>
+            <i class="fa-brands fa-chrome"></i>
+        </div>
+    </div>
+    <!-- LOGO END -->
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Thank you for visiting our website!
+            Your presence means a lot to us. Feel free to explore and discover all the exciting things we've prepared
+            just for you!</p>
+        <p>© titikawal.space 2025
+            <br>
+            © By Fatih Al-Fakhri Muhammad 2025
+        </p>
+    </footer>
+    <!-- FOOTER END -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Educational Background</title>
+    <link rel="shortcut icon" type="x-icon" href="/assets/images/al.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: #121212;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #ddd;
+            margin: 0;
+            padding: 0;
+        }
+
+        .timeline {
+            position: relative;
+            margin: 40px auto;
+            padding-left: 30px;
+            max-width: 600px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #ff6f00;
+            /* garis oranye */
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: all 0.6s ease-out;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .timeline-icon {
+            position: absolute;
+            left: -8px;
+            top: 0;
+            background: #6d4c41;
+            /* cokelat gelap */
+            color: #fff;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            box-shadow: 0 0 8px rgba(255, 111, 0, 0.7);
+        }
+
+        .timeline-content {
+            background: #3e2723;
+            /* cokelat sangat gelap */
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgb(0 0 0 / 0.7);
+            color: #ddd;
+        }
+
+        .timeline-content h5 {
+            margin-bottom: 6px;
+            color: #ffb74d;
+            /* oranye muda */
+        }
+
+        .timeline-content p {
+            margin: 0;
+            color: #ccc;
+        }
+
+        small.text-muted {
+            color: #777 !important;
+        }
+
+        @media (max-width: 600px) {
+            .timeline {
+                padding-left: 20px;
+                max-width: 100%;
+                margin: 20px 15px;
+            }
+
+            .timeline-icon {
+                left: -12px;
+                width: 32px;
+                height: 32px;
+                font-size: 16px;
+            }
+        }
+
+        .video-banner {
+            position: relative;
+            width: 100%;
+            height: 60vh;
+            overflow: hidden;
+        }
+
+
+        .video-banner video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+            filter: brightness(0.5);
+        }
+
+        .video-banner .overlay-text {
+            position: absolute;
+            z-index: 2;
+            top: em;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+        }
+
+        .video-banner .overlay-text1 {
+            position: absolute;
+            z-index: 2;
+            top: 1em;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            font-weight: bold;
+            color: #ff6f00;
+            text-shadow: 0 0 10px rgb(255, 111, 0, 0.7);
+        }
+
+        .video-banner .overlay-text2 {
+            position: absolute;
+            z-index: 2;
+            top: 2em;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            font-weight: bold;
+            color: #ff6f00;
+            text-shadow: 0 0 10px rgb(255, 111, 0, 0.7);
+        }
+
+        footer {
+            text-align: center;
+            font-weight: 300;
+            margin-top: 0px;
+            padding: 12px 10px;
+            font-size: 0.8rem;
+            user-select: none;
+        }
+
+        .logo-track {
+            white-space: nowrap;
+            overflow: hidden;
+            position: relative;
+            background: #121212;
+            padding: 20px 0;
+            margin-top: 10px;
+        }
+
+        .logo-slide {
+            display: inline-block;
+            animation: slide 20s linear infinite;
+        }
+
+        .logo-slide i {
+            font-size: 3rem;
+            margin: 0 25px;
+            color: #ffffff;
+        }
+
+        @keyframes slide {
+            from {
+                transform: translateX(100%);
+            }
+
+            to {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- INI NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand"><img src="assets/images/al.png" alt="" width="auto" height="50"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="Home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Portofolio.html">Achievements & Portfolio</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            More
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="Contact.html">Contact</a></li>
+                            <li><a class="dropdown-item" href="Career.html">Educational Background</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- INI NAVBAR -->
+
+    <!-- INI VIDIO BELAJAR -->
+    <div class="video-banner">
+        <video autoplay muted loop>
+            <source src="/assets/Video/belajar.mp4" type="video/mp4">
+        </video>
+        <div class="overlay-text">MY</div>
+        <div class="overlay-text1">Educational</div>
+        <div class="overlay-text2"> Background</div>
+    </div>
+    <!-- INI VIDIO BELAJAR END -->
+
+
+    <!-- INI RIWAYAT PENDIDIKAN -->
+    <div class="container my-5">
+        <h2 class="text-center mb-5">📚 My Educational Background</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-baby"></i></div>
+                <div class="timeline-content">
+                    <h5>BA Aisyiyah Munjul <br><small class="text-muted">2012 - 2013</small></h5>
+                    <p>This was the first place where I learned through playing and made many beautiful early memories
+                        😄</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-child"></i></div>
+                <div class="timeline-content">
+                    <h5>SDIT Nurul Huda Karangreja <br><small class="text-muted">2013 - 2019</small></h5>
+                    <p>I started practicing taekwondo and archery 🥋🏹, while also learning academic and Islamic values.
+                    </p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-school"></i></div>
+                <div class="timeline-content">
+                    <h5>SMP Negeri 3 Purbalingga <br><small class="text-muted">2019 - 2022</small></h5>
+                    <p>I continued to grow in both taekwondo and archery by joining competitions and improving my
+                        skills.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-user-graduate"></i></div>
+                <div class="timeline-content">
+                    <h5>MAN Purbalingga <br><small class="text-muted">2022 - 2025</small></h5>
+                    <p>I focused on academics and preparing for university. I stopped archery during this time but
+                        stayed active in taekwondo 🥋</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div class="timeline-content">
+                    <h5>Telkom University <br><small class="text-muted">Coming soon</small></h5>
+                    <p>A new chapter is about to begin! I'm excited to study technology while continuing my passion 💻
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- INI RIWAYAT PENDIDIKAN END -->
+
+    <!-- INI HARAPAN -->
+    <div class="container my-5">
+        <h2 class="text-center mb-5">✨ Someday</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fa-solid fa-terminal"></i></div>
+                <div class="timeline-content">
+                    <h5>Ubisoft Studio game <br><small class="text-muted">Coming soon</small></h5>
+                    <p>One day, I want to stand behind the creation of legendary games like Assassin’s Creed or Far Cry
+                        — not as a player 🎮, but as a developer. I hope my journey leads me to Ubisoft. This dream
+                        isn’t over yet. Wish me luck! 🙏</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fa-brands fa-google"></i></div>
+                <div class="timeline-content">
+                    <h5>Google <br><small class="text-muted">Coming soon</small></h5>
+                    <p>OWorking at Google LLC is more than a job — it’s a chance to innovate 💡, grow 🌱, and
+                        make a
+                        meaningful impact on the world 🌍. I am committed to turning this dream into reality. 🙌
+                    </p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fa-brands fa-spotify"></i></div>
+                <div class="timeline-content">
+                    <h5>Spotify <br><small class="text-muted">Coming soon</small></h5>
+                    <p>Someday, I hope to be a programmer at Spotify — not just enjoying the music 🎧, but creating the
+                        technology behind it 💻.
+                    </p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fa-brands fa-playstation"></i></div>
+                <div class="timeline-content">
+                    <h5>Playstation <br><small class="text-muted">Coming soon</small></h5>
+                    <p>Hoping one day to be part of the PlayStation road. 🎮
+                        To create worlds where players lose and find,
+                        A place where passion and creativity bind. 💻
+                        Here’s to the journey, no matter how long,
+                        Because in my heart, I know I belong. 🎉
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- INI HARAPAN END -->
+
+    <!-- LOGO -->
+    <div class="logo-track">
+        <div class="logo-slide">
+            <i class="fa-brands fa-github"></i>
+            <i class="fa-brands fa-gitlab"></i>
+            <i class="fa-brands fa-git-alt"></i>
+            <i class="fa-brands fa-reddit"></i>
+            <i class="fa-brands fa-bootstrap"></i>
+            <i class="fa-brands fa-html5"></i>
+            <i class="fa-brands fa-css3-alt"></i>
+            <i class="fa-brands fa-js"></i>
+            <i class="fab fa-google"></i>
+            <i class="fa-brands fa-edge"></i>
+            <i class="fab fa-microsoft"></i>
+            <i class="fa-brands fa-firefox-browser"></i>
+            <i class="fa-brands fa-chrome"></i>
+        </div>
+    </div>
+    <!-- LOGO END -->
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Thank you for visiting our website!
+            Your presence means a lot to us. Feel free to explore and discover all the exciting things we've prepared
+            just for you!</p>
+        <p>© titikawal.space 2025
+            <br>
+            © By Fatih Al-Fakhri Muhammad 2025
+        </p>
+    </footer>
+    <!-- FOOTER END -->
+
+    <script>
+        const items = document.querySelectorAll('.timeline-item');
+        function checkPosition() {
+            const triggerBottom = window.innerHeight * 0.9;
+            items.forEach(item => {
+                const itemTop = item.getBoundingClientRect().top;
+                if (itemTop < triggerBottom) {
+                    item.classList.add('visible');
+                }
+            });
+        }
+        window.addEventListener('scroll', checkPosition);
+        window.addEventListener('load', checkPosition);
+    </script>
+    <!-- INI RIWAYAT PENDIDIKAN END -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
